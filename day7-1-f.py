@@ -1,16 +1,21 @@
-import itertools
+import numpy as np
 
-def I(n):
-    A = []
-    for i in range(n):
-        A.append([1 if j == i else 0 for j in range(n)])
-    return A
+M1 = np.array([
+    (1, 0, 0),
+    (0, 1, 0),
+    (0, 0, 1)]);
+def is_perm_matrix(M) :
+    for sumRow in np.sum(M, axis=1) :
+        if sumRow != 1 :
+            return False
+    for sumCol in np.sum(M, axis=0) :
+        if sumCol != 1 :
+            return False
+    return True
 
-#tests:
+if is_perm_matrix(M1) == True:
+    print ("given matrix is permutation matrix.")
+else:
+    print("given matrix is not a permitation matrix.")
 
-A = I(3)
-
-for m in itertools.permutations(A):
-    print('\n'.join(str(row) for row in m))
-    print('')
 
