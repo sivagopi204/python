@@ -10,14 +10,3 @@ for y in range (0,3):
 for z in range(0,3):
     V[z]=math.cos(math.radians(angles[z]))
     print(V)
-
-
-
-
-
-
-
-
-
-
-
