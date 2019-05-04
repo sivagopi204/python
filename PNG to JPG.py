@@ -1,4 +1,3 @@
-# importing google_images_download module 
 from google_images_download import google_images_download
 from PIL import Image
 import os
@@ -11,7 +10,7 @@ def downloadimages(query):
     try:
         response.download(arguments)    
     except:
-		pass
+	    pass
 for query in search_queries: 
     downloadimages(query) 
     print()
@@ -24,4 +23,6 @@ for r, d, f in os.walk(path):
             im = Image.open(path)
             name = file.rstrip(".png") + ".jpg"
             im.convert('RGB').save(name,"JPEG")
+
+
 
